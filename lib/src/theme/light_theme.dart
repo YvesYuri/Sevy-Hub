@@ -39,7 +39,10 @@ class LightTheme {
           fontSize: 14,
           fontWeight: FontWeight.w500,
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 12,
+        ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: BorderSide(color: yellow800Color, width: 2),
@@ -50,28 +53,33 @@ class LightTheme {
         ),
         hoverColor: gray200Color,
       ),
-      navigationRailTheme: NavigationRailThemeData(
+      navigationDrawerTheme: NavigationDrawerThemeData(
         backgroundColor: gray100Color,
-        // elevation: 12,
-        useIndicator: false,
-        selectedIconTheme: IconThemeData(color: yellow500Color, size: 20),
-        unselectedIconTheme: IconThemeData(color: gray400Color, size: 20),
-        selectedLabelTextStyle: TextStyle(
-          color: gray900Color,
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'Inter',
+        tileHeight: 48,
+        iconTheme: WidgetStateProperty<IconThemeData>.fromMap(
+          <WidgetStatesConstraint, IconThemeData>{
+            WidgetState.selected: IconThemeData(color: yellow500Color, size: 20),
+            WidgetState.any: IconThemeData(color: gray400Color, size: 20),
+          },
         ),
-        unselectedLabelTextStyle: TextStyle(
-          color: gray400Color,
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-          fontFamily: 'Inter',
+        labelTextStyle: WidgetStateProperty<TextStyle>.fromMap(
+          <WidgetStatesConstraint, TextStyle>{
+            WidgetState.selected: TextStyle(
+              color: gray900Color,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Inter',
+            ),
+            WidgetState.any: TextStyle(
+              color: gray400Color,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Inter',
+            ),
+          },
         ),
-        indicatorShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
-        labelType: NavigationRailLabelType.none,
+        indicatorColor: transparentColor,
+        indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       ),
     );
   }
