@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sevyhub/src/modules/device/device_view.dart';
 import 'package:sevyhub/src/modules/navigation/navigation_view.dart';
-import 'package:sevyhub/src/modules/stl_gallery/stl_gallery_view.dart';
+import 'package:sevyhub/src/modules/design_library/design_library_view.dart';
 
 class AppRoutes {
   static final GoRouter router = GoRouter(
+    initialLocation: '/device',
     routes: [
       ShellRoute(
         builder: (context, state, view) {
@@ -42,7 +43,7 @@ class AppRoutes {
             pageBuilder: (context, state) {
               return CustomTransitionPage(
                 key: state.pageKey,
-                child: const StlGalleryView(),
+                child: const DesignLibraryView(),
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
                       return FadeTransition(

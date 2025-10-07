@@ -21,8 +21,13 @@ class DarkTheme {
         brightness: Brightness.dark,
       ),
       scaffoldBackgroundColor: gray900Color,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: transparentColor,
+        foregroundColor: gray100Color,
+        elevation: 0,
+      ),
       splashColor: whiteColor.withValues(alpha: 0.1),
-      fontFamily: 'Inter',
+      fontFamily: 'Montserrat',
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.all(gray800Color),
         checkColor: WidgetStateProperty.all(yellow800Color),
@@ -44,13 +49,56 @@ class DarkTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: yellow500Color, width: 2),
+          borderSide: BorderSide(color: yellow800Color, width: 2),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: BorderSide.none,
         ),
         hoverColor: gray800Color,
+      ),
+      navigationDrawerTheme: NavigationDrawerThemeData(
+        backgroundColor: gray900Color,
+        tileHeight: 48,
+        iconTheme: WidgetStateProperty<IconThemeData>.fromMap(<
+          WidgetStatesConstraint,
+          IconThemeData
+        >{
+          WidgetState.selected: IconThemeData(color: yellow800Color, size: 20),
+          WidgetState.any: IconThemeData(color: gray400Color, size: 20),
+        }),
+        labelTextStyle: WidgetStateProperty<TextStyle>.fromMap(
+          <WidgetStatesConstraint, TextStyle>{
+            WidgetState.selected: TextStyle(
+              color: gray100Color,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Montserrat',
+            ),
+            WidgetState.any: TextStyle(
+              color: gray400Color,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Montserrat',
+            ),
+          },
+        ),
+        indicatorColor: transparentColor,
+        indicatorShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+          ),
+        ),
+      ),
+      dividerTheme: DividerThemeData(
+        color: gray400Color,
+        thickness: 0.8,
+        // space: 1,
       ),
     );
   }

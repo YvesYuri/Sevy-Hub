@@ -22,7 +22,7 @@ class LightTheme {
         brightness: Brightness.light,
       ),
       scaffoldBackgroundColor: gray100Color,
-      fontFamily: 'Inter',
+      fontFamily: 'Montserrat',
       splashColor: whiteColor.withValues(alpha: 0.1),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.all(gray200Color),
@@ -68,18 +68,30 @@ class LightTheme {
               color: gray900Color,
               fontSize: 14,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Inter',
+              fontFamily: 'Montserrat',
             ),
             WidgetState.any: TextStyle(
               color: gray400Color,
               fontSize: 14,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'Inter',
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Montserrat',
             ),
           },
         ),
         indicatorColor: transparentColor,
         indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      ),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+          ),
+        ),
+      ),
+      dividerTheme: DividerThemeData(
+        color: gray200Color,
+        thickness: 0.8,
+        // space: 1,
       ),
     );
   }
