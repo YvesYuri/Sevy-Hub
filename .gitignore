@@ -43,3 +43,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# VS Code settings
+/.vscode/
+
+# Firebase options file
+/lib/firebase_options.dart

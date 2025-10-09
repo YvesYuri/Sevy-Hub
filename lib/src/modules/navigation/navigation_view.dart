@@ -16,7 +16,7 @@ class NavigationView extends StatelessWidget {
   Widget build(BuildContext context) {
     final location = GoRouterState.of(context).uri.toString();
     int selectedIndex = 0;
-    if (location.startsWith('/stl_gallery')) {
+    if (location.startsWith('/design_library')) {
       selectedIndex = 1;
     }
     return Scaffold(
@@ -134,7 +134,7 @@ class NavigationView extends StatelessWidget {
                           context.go('/device');
                           break;
                         case 1:
-                          context.go('/stl_gallery');
+                          context.go('/design_library');
                           break;
                       }
                     },

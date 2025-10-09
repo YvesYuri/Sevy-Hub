@@ -100,6 +100,9 @@ class DarkTheme {
         thickness: 0.8,
         // space: 1,
       ),
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: yellow800Color,
+      ),
     );
   }
 }

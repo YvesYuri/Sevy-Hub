@@ -39,7 +39,7 @@ class AppRoutes {
             },
           ),
           GoRoute(
-            path: '/stl_gallery',
+            path: '/design_library',
             pageBuilder: (context, state) {
               return CustomTransitionPage(
                 key: state.pageKey,

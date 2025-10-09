@@ -17,10 +17,14 @@ dependencies:
   go_router: ^16.2.4
   provider: ^6.1.1
   flutter_svg: ^2.2.1
+  image: ^4.2.0
   three_js: ^0.2.4
   three_js_controls: ^0.2.0
   three_js_helpers: ^0.2.2
   three_js_transform_controls: ^0.2.0
+  firebase_core: ^4.1.1
+  firebase_storage: ^13.0.2
+  auto_animated: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -33,8 +37,14 @@ flutter:
 
   assets:
     - assets/images/svg/logo_color.svg
-    - assets/images/svg/logo_color_shadow.svg
     - assets/examples/benchy.stl
+    - assets/examples/stackabletray.stl
+    - assets/examples/dragon.stl
+    - assets/examples/skull.stl
+    - assets/examples/mask.stl
+    - assets/examples/clips.stl
+    - assets/examples/hair.stl
+    
 
   fonts:
     - family: Montserrat
