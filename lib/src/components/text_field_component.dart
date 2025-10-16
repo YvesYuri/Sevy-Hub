@@ -5,37 +5,69 @@ import 'package:sevyhub/src/theme/light_theme.dart';
 class TextFieldComponent extends StatelessWidget {
   final String? hintText;
   final TextEditingController? controller;
-  final IconData? icon;
+  final IconData? leadingIcon;
+  final IconData? trailingIcon;
+  final bool? enabled;
+  final FocusNode? focusNode;
+  final VoidCallback? onTapTrailingIcon;
+  final bool? obscureText;
+
   const TextFieldComponent({
     super.key,
     this.hintText,
     this.controller,
-    this.icon,
+    this.leadingIcon,
+    this.trailingIcon,
+    this.enabled,
+    this.focusNode,
+    this.onTapTrailingIcon,
+    this.obscureText,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      focusNode: focusNode,
+      obscureText: obscureText ?? false,
       decoration: InputDecoration(
         hintText: hintText,
-        prefixIcon: icon != null
+        prefixIcon: leadingIcon != null
             ? Icon(
-                icon,
+                leadingIcon,
                 size: 18,
                 color: Theme.of(context).brightness == Brightness.dark
                     ? DarkTheme.gray400Color
                     : LightTheme.gray400Color,
               )
             : null,
+        suffixIcon: trailingIcon != null
+            ? MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: onTapTrailingIcon,
+                  child: Icon(
+                    trailingIcon,
+                    size: 18,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? DarkTheme.gray100Color
+                        : LightTheme.gray900Color,
+                  ),
+                ),
+              )
+            : null,
       ),
-      style: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
-        color: Theme.of(context).brightness == Brightness.dark
-            ? DarkTheme.gray100Color
-            : LightTheme.gray900Color,
-      ),
+      // style: TextStyle(
+      //   fontSize: 14,
+      //   fontWeight: FontWeight.w500,
+      //   color: enabled == true
+      //       ? (Theme.of(context).brightness == Brightness.dark
+      //             ? DarkTheme.gray100Color
+      //             : LightTheme.gray900Color)
+      //       : (Theme.of(context).brightness == Brightness.dark
+      //             ? DarkTheme.gray400Color
+      //             : LightTheme.gray400Color),
+      // ),
     );
   }
 }

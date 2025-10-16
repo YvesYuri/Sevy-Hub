@@ -33,6 +33,7 @@ class LightTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
+        isDense: true,
         fillColor: gray200Color,
         hintStyle: TextStyle(
           color: gray400Color,
@@ -40,8 +41,8 @@ class LightTheme {
           fontWeight: FontWeight.w500,
         ),
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+          horizontal: 13,
+          vertical: 15,
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
@@ -90,7 +91,7 @@ class LightTheme {
       ),
       dividerTheme: DividerThemeData(
         color: gray200Color,
-        thickness: 0.8,
+        thickness: 0.6,
         // space: 1,
       ),
     );

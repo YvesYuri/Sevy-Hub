@@ -1,9 +1,9 @@
 # Todo List
 
-- [ ] add tooltip icon side navigation
+- [x] add tooltip icon side navigation
 - [ ] update light theme
 - [ ] update file name design library  
 - [ ] remove prints  
-- [ ] update navigation index and routes  
+- [x] update navigation index and routes  
 
 

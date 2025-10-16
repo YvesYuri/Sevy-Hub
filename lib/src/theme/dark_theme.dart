@@ -11,6 +11,8 @@ class DarkTheme {
   static const Color gray400Color = Color(0xFF8A8A7C);
   static const Color gray800Color = Color(0xFF242420);
   static const Color gray900Color = Color(0xFF141412);
+  static const Color errorColor = Color(0xFFF51616);
+  static const Color successColor = Color(0xFF36F516);
 
   static ThemeData get theme {
     return ThemeData(
@@ -44,9 +46,10 @@ class DarkTheme {
           fontWeight: FontWeight.w500,
         ),
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+          horizontal: 13,
+          vertical: 14,
         ),
+        isDense: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: BorderSide(color: yellow800Color, width: 2),
@@ -58,7 +61,7 @@ class DarkTheme {
         hoverColor: gray800Color,
       ),
       navigationDrawerTheme: NavigationDrawerThemeData(
-        backgroundColor: gray900Color,
+        backgroundColor: transparentColor,
         tileHeight: 48,
         iconTheme: WidgetStateProperty<IconThemeData>.fromMap(<
           WidgetStatesConstraint,
@@ -97,11 +100,63 @@ class DarkTheme {
       ),
       dividerTheme: DividerThemeData(
         color: gray400Color,
-        thickness: 0.8,
-        // space: 1,
+        thickness: 0.6,
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: yellow800Color,
+        strokeWidth: 1.5,
+      ),
+      snackBarTheme: SnackBarThemeData(
+        backgroundColor: gray800Color,
+        width: 750,
+        showCloseIcon: false,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
+      dialogTheme: DialogThemeData(
+        backgroundColor: gray900Color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+        titleTextStyle: TextStyle(
+          color: gray100Color,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          fontFamily: 'Montserrat',
+        ),
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        color: gray800Color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+        textStyle: TextStyle(
+          color: gray100Color,
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'Montserrat',
+        ),
+        iconSize: 18,
+        iconColor: yellow800Color,
+        menuPadding: EdgeInsets.zero,
+      ),
+      tooltipTheme: TooltipThemeData(
+        decoration: BoxDecoration(
+          color: gray800Color,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        textStyle: TextStyle(
+          color: gray100Color,
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'Montserrat',
+        ),
+        waitDuration: const Duration(milliseconds: 500),
+        showDuration: const Duration(seconds: 2),
+        preferBelow: true,
+        verticalOffset: 10,
       ),
     );
   }
