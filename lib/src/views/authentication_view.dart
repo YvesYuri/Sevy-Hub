@@ -26,10 +26,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
   @override
   void initState() {
     super.initState();
-    var viewModel = Provider.of<AuthenticationViewModel>(
-      context,
-      listen: false,
-    );
+    var viewModel = context.read<AuthenticationViewModel>();
     viewModel.addListener(() {
       if (viewModel.state == AuthenticationState.error) {
         String message = viewModel.errorMessage!;
@@ -152,7 +149,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
             Consumer<AuthenticationViewModel>(
               builder: (context, viewModel, child) {
                 return ButtonComponent(
-                  filled: true,
+                  // filled: true,
                   bordered: false,
                   boldText: true,
                   enabled:
@@ -208,7 +205,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
             Consumer<AuthenticationViewModel>(
               builder: (context, viewModel, child) {
                 return ButtonComponent(
-                  filled: false,
+                  // filled: false,
                   bordered: true,
                   boldText: false,
                   width: double.maxFinite,
@@ -437,7 +434,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
             Consumer<AuthenticationViewModel>(
               builder: (context, viewModel, child) {
                 return ButtonComponent(
-                  filled: true,
+                  // filled: true,
                   bordered: false,
                   boldText: true,
                   enabled:
@@ -493,7 +490,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
             Consumer<AuthenticationViewModel>(
               builder: (context, viewModel, child) {
                 return ButtonComponent(
-                  filled: false,
+                  // filled: false,
                   bordered: true,
                   boldText: false,
                   width: double.maxFinite,

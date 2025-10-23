@@ -10,6 +10,7 @@ class DarkTheme {
   static const Color gray200Color = Color(0xFFCCCCC4);
   static const Color gray400Color = Color(0xFF8A8A7C);
   static const Color gray800Color = Color(0xFF242420);
+  static const Color gray850Color = Color(0xFF191916);
   static const Color gray900Color = Color(0xFF141412);
   static const Color errorColor = Color(0xFFF51616);
   static const Color successColor = Color(0xFF36F516);
@@ -42,12 +43,12 @@ class DarkTheme {
         fillColor: gray800Color,
         hintStyle: TextStyle(
           color: gray400Color,
-          fontSize: 14,
+          fontSize: 13,
           fontWeight: FontWeight.w500,
         ),
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 13,
-          vertical: 14,
+          horizontal: 12,
+          vertical: 12.8,
         ),
         isDense: true,
         focusedBorder: OutlineInputBorder(
@@ -67,37 +68,37 @@ class DarkTheme {
           WidgetStatesConstraint,
           IconThemeData
         >{
-          WidgetState.selected: IconThemeData(color: yellow800Color, size: 20),
-          WidgetState.any: IconThemeData(color: gray400Color, size: 20),
+          WidgetState.selected: IconThemeData(color: yellow800Color, size: 18),
+          WidgetState.any: IconThemeData(color: gray400Color, size: 18),
         }),
         labelTextStyle: WidgetStateProperty<TextStyle>.fromMap(
           <WidgetStatesConstraint, TextStyle>{
             WidgetState.selected: TextStyle(
               color: gray100Color,
-              fontSize: 14,
+              fontSize: 13,
               fontWeight: FontWeight.w600,
               fontFamily: 'Montserrat',
             ),
             WidgetState.any: TextStyle(
               color: gray400Color,
-              fontSize: 14,
+              fontSize: 13,
               fontWeight: FontWeight.w600,
               fontFamily: 'Montserrat',
             ),
           },
         ),
-        indicatorColor: transparentColor,
+        indicatorColor: gray800Color,
         indicatorShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(50),
         ),
       ),
-      iconButtonTheme: IconButtonThemeData(
-        style: ButtonStyle(
-          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-          ),
-        ),
-      ),
+      // iconButtonTheme: IconButtonThemeData(
+      //   style: ButtonStyle(
+      //     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+      //       RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      //     ),
+      //   ),
+      // ),
       dividerTheme: DividerThemeData(
         color: gray400Color,
         thickness: 0.6,
@@ -118,33 +119,34 @@ class DarkTheme {
       dialogTheme: DialogThemeData(
         backgroundColor: gray900Color,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(0),
         ),
         titleTextStyle: TextStyle(
           color: gray100Color,
-          fontSize: 16,
+          fontSize: 14,
           fontWeight: FontWeight.w600,
           fontFamily: 'Montserrat',
         ),
       ),
       popupMenuTheme: PopupMenuThemeData(
-        color: gray800Color,
+        color: gray850Color,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(8),
         ),
-        textStyle: TextStyle(
-          color: gray100Color,
-          fontSize: 13,
-          fontWeight: FontWeight.w500,
-          fontFamily: 'Montserrat',
+        elevation: 18,
+        labelTextStyle: WidgetStateProperty.all<TextStyle>(
+          TextStyle(
+            color: gray100Color,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Montserrat',
+          ),
         ),
-        iconSize: 18,
-        iconColor: yellow800Color,
-        menuPadding: EdgeInsets.zero,
+        menuPadding: EdgeInsets.symmetric(vertical: 6, horizontal: 0),
       ),
       tooltipTheme: TooltipThemeData(
         decoration: BoxDecoration(
-          color: gray800Color,
+          color: blackColor,
           borderRadius: BorderRadius.circular(4),
         ),
         textStyle: TextStyle(

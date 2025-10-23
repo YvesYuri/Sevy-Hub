@@ -57,12 +57,13 @@ class LightTheme {
       navigationDrawerTheme: NavigationDrawerThemeData(
         backgroundColor: gray100Color,
         tileHeight: 48,
-        iconTheme: WidgetStateProperty<IconThemeData>.fromMap(
-          <WidgetStatesConstraint, IconThemeData>{
-            WidgetState.selected: IconThemeData(color: yellow500Color, size: 20),
-            WidgetState.any: IconThemeData(color: gray400Color, size: 20),
-          },
-        ),
+        iconTheme: WidgetStateProperty<IconThemeData>.fromMap(<
+          WidgetStatesConstraint,
+          IconThemeData
+        >{
+          WidgetState.selected: IconThemeData(color: yellow500Color, size: 20),
+          WidgetState.any: IconThemeData(color: gray400Color, size: 20),
+        }),
         labelTextStyle: WidgetStateProperty<TextStyle>.fromMap(
           <WidgetStatesConstraint, TextStyle>{
             WidgetState.selected: TextStyle(
@@ -80,7 +81,9 @@ class LightTheme {
           },
         ),
         indicatorColor: transparentColor,
-        indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        indicatorShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
@@ -93,6 +96,16 @@ class LightTheme {
         color: gray200Color,
         thickness: 0.6,
         // space: 1,
+      ),
+      dialogTheme: DialogThemeData(
+        backgroundColor: gray100Color,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        titleTextStyle: TextStyle(
+          color: gray900Color,
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          fontFamily: 'Montserrat',
+        ),
       ),
     );
   }

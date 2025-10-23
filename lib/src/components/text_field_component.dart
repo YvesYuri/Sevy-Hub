@@ -30,12 +30,16 @@ class TextFieldComponent extends StatelessWidget {
       controller: controller,
       focusNode: focusNode,
       obscureText: obscureText ?? false,
+      enabled: enabled ?? true,
+      mouseCursor: enabled == true
+          ? SystemMouseCursors.text
+          : SystemMouseCursors.forbidden,
       decoration: InputDecoration(
         hintText: hintText,
         prefixIcon: leadingIcon != null
             ? Icon(
                 leadingIcon,
-                size: 18,
+                size: 16,
                 color: Theme.of(context).brightness == Brightness.dark
                     ? DarkTheme.gray400Color
                     : LightTheme.gray400Color,
@@ -57,17 +61,17 @@ class TextFieldComponent extends StatelessWidget {
               )
             : null,
       ),
-      // style: TextStyle(
-      //   fontSize: 14,
-      //   fontWeight: FontWeight.w500,
-      //   color: enabled == true
-      //       ? (Theme.of(context).brightness == Brightness.dark
-      //             ? DarkTheme.gray100Color
-      //             : LightTheme.gray900Color)
-      //       : (Theme.of(context).brightness == Brightness.dark
-      //             ? DarkTheme.gray400Color
-      //             : LightTheme.gray400Color),
-      // ),
+      style: TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.w500,
+        color: enabled == true
+            ? (Theme.of(context).brightness == Brightness.dark
+                  ? DarkTheme.gray100Color
+                  : LightTheme.gray900Color)
+            : (Theme.of(context).brightness == Brightness.dark
+                  ? DarkTheme.gray400Color
+                  : LightTheme.gray400Color),
+      ),
     );
   }
 }

@@ -75,7 +75,7 @@ class NotFoundView extends StatelessWidget {
                 ButtonComponent(
                   text: "Back to Home",
                   onPressed: () => context.go('/device'),
-                  filled: true,
+                  // filled: true,
                   enabled: true,
                   width: 120,
                   boldText: true,

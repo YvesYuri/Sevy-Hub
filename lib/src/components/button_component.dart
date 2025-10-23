@@ -6,7 +6,9 @@ import 'package:sevyhub/src/theme/light_theme.dart';
 class ButtonComponent extends StatelessWidget {
   final String? text;
   final double? width;
-  final bool? filled;
+  final Color? fillColor;
+  final Color? iconColor;
+  final Color? textColor;
   final bool? bordered;
   final dynamic icon;
   final bool? boldText;
@@ -18,7 +20,9 @@ class ButtonComponent extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.width,
-    this.filled,
+    this.fillColor,
+    this.iconColor,
+    this.textColor,
     this.bordered,
     this.icon,
     this.boldText,
@@ -31,7 +35,7 @@ class ButtonComponent extends StatelessWidget {
     return Material(
       shape: bordered == true
           ? RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(50),
               side: BorderSide(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? DarkTheme.gray400Color
@@ -40,7 +44,7 @@ class ButtonComponent extends StatelessWidget {
               ),
             )
           : RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(50),
               side: BorderSide(
                 color: Theme.of(context).brightness == Brightness.dark
                     ? DarkTheme.transparentColor
@@ -48,50 +52,32 @@ class ButtonComponent extends StatelessWidget {
                 width: 0,
               ),
             ),
-      color: filled == true
-          ? (Theme.of(context).brightness == Brightness.dark
-                ? DarkTheme.yellow800Color
-                : LightTheme.yellow500Color)
-          : (Theme.of(context).brightness == Brightness.dark
-                ? DarkTheme.gray900Color
-                : LightTheme.gray100Color),
+      color:
+          fillColor,
       child: InkWell(
         onTap: enabled == true ? onPressed : null,
-        borderRadius: BorderRadius.circular(4),
-        hoverColor: filled == true
-            ? (Theme.of(context).brightness == Brightness.dark
-                  ? DarkTheme.yellow500Color
-                  : LightTheme.yellow800Color)
-            : (Theme.of(context).brightness == Brightness.dark
-                  ? DarkTheme.transparentColor
-                  : LightTheme.transparentColor),
+        borderRadius: BorderRadius.circular(50),
         mouseCursor: enabled == true
             ? SystemMouseCursors.click
             : SystemMouseCursors.forbidden,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 11, horizontal: 16),
+          padding: const EdgeInsets.only(bottom: 12, top: 10,  left: 16, right: 16),
           child: SizedBox(
             width: width,
             child: isLoading == true
                 ? Container(
-                  alignment: Alignment.center,
-                  height: 20,
-                  width: 20,
-                  child: SizedBox(
-                    height: 16,
-                    width: 16,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: filled == true
-                          ? (Theme.of(context).brightness == Brightness.dark
-                                ? DarkTheme.gray900Color
-                                : LightTheme.gray900Color)
-                          : (Theme.of(context).brightness == Brightness.dark
-                                ? DarkTheme.yellow800Color
-                                : LightTheme.yellow500Color),
+                    alignment: Alignment.center,
+                    height: 20,
+                    width: 20,
+                    child: SizedBox(
+                      height: 16,
+                      width: 16,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: fillColor,
+                      ),
                     ),
-                  ),
-                )
+                  )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -100,16 +86,9 @@ class ButtonComponent extends StatelessWidget {
                             ? SvgPicture.asset(icon, height: 18)
                             : Icon(
                                 icon,
-                                size: 18,
-                                color: filled == true
-                                    ? (Theme.of(context).brightness ==
-                                              Brightness.dark
-                                          ? DarkTheme.gray900Color
-                                          : LightTheme.gray900Color)
-                                    : (Theme.of(context).brightness ==
-                                              Brightness.dark
-                                          ? DarkTheme.yellow800Color
-                                          : LightTheme.yellow500Color),
+                                size: 15,
+                                color:
+                                    iconColor,
                               ),
                         const SizedBox(width: 11),
                       ],
@@ -119,16 +98,9 @@ class ButtonComponent extends StatelessWidget {
                               text!,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: filled == true
-                                    ? (Theme.of(context).brightness ==
-                                              Brightness.dark
-                                          ? DarkTheme.gray900Color
-                                          : LightTheme.gray900Color)
-                                    : (Theme.of(context).brightness ==
-                                              Brightness.dark
-                                          ? DarkTheme.gray100Color
-                                          : LightTheme.gray900Color),
-                                fontSize: 14,
+                                color:
+                                    textColor,
+                                fontSize: 12,
                                 fontWeight: boldText == true
                                     ? FontWeight.w600
                                     : FontWeight.w500,
